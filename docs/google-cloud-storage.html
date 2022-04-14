@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from getsharex.com/docs/google-cloud-storage by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="author" content="ShareX Team">
+    <meta name="generator" content="Jekyll v3.9.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Google Cloud Storage guide - ShareX</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ShareX">
+    <meta name="twitter:title" content="ShareX - The best free and open source screenshot tool for Windows">
+    <meta name="twitter:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="twitter:image" content="../img/ShareX_Card_Large.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ShareX - The best free and open source screenshot tool for Windows" />
+    <meta property="og:url" content="google-cloud-storage-2.html" />
+    <meta property="og:image" content="../img/ShareX_Card_Large.png" />
+    <meta property="og:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from." />
+
+    <link rel="icon" href="../favicon.ico">
+
+    <meta name="theme-color" content="#174974">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.solid.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.brands.min.css" rel="stylesheet">
+    <link href="../css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../css/main5e2d.css?1648824066" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../downloads/index.html">Downloads</a></li>
+                <li class="nav-item"><a class="nav-link" href="../changelog/index.html">Changelog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../screenshots/index.html">Screenshots</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/ShareX/ShareX">GitHub</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Docs</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://github.com/ShareX/CustomUploaders">Custom uploaders</a>
+                        <a class="dropdown-item" href="../image-effects/index.html">Image effects</a>
+                        <a class="dropdown-item" href="../actions/index.html">Actions</a>
+                        <a class="dropdown-item" href="faq.html">Frequently asked questions</a>
+                        <a class="dropdown-item" href="dev-builds.html">Dev builds</a>
+                        <a class="dropdown-item" href="region-capture.html">Region capture keybinds</a>
+                        <a class="dropdown-item" href="command-line-arguments.html">Command line arguments</a>
+                        <a class="dropdown-item" href="translation.html">Translation</a>
+                        <a class="dropdown-item" href="custom-uploader.html">Custom uploader guide</a>
+                        <a class="dropdown-item" href="amazon-s3.html">Amazon S3 guide</a>
+                        <a class="dropdown-item" href="google-cloud-storage.html">Google Cloud Storage guide</a>
+                        <a class="dropdown-item" href="website-capture.html">Website capture</a>
+                        <a class="dropdown-item" href="../brand-assets/index.html">Brand assets</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a id="sharex-twitter" class="nav-link" href="https://twitter.com/ShareX" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Follow us on Twitter!">Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://discord.gg/ShareX">Discord</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://store.steampowered.com/app/400040/">Steam</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.microsoft.com/store/apps/9nblggh4z1sp">Microsoft Store</a></li>
+                <li class="nav-item"><a class="nav-link" href="../donate/index.html">Donate</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="jumbotron jumbotron-compact">
+    <div class="container">
+        <h1>
+            <a href="../index.html">ShareX</a>
+        </h1>
+        <p>Google Cloud Storage guide</p>
+    </div>
+</div>
+
+<div>
+    <div class="container markdown">
+        <h2 id="how-to-configure-google-cloud-storage-and-use-it-in-sharex">How to configure Google Cloud Storage and use it in ShareX</h2>
+
+<h3 id="create-project">Create project</h3>
+
+<ul>
+  <li>Open <a href="https://console.cloud.google.com/">Google Cloud Console</a></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Select a project</code> then <code class="language-plaintext highlighter-rouge">New project</code></li>
+  <li>Name your project, for example <code class="language-plaintext highlighter-rouge">ShareX</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Create</code></li>
+</ul>
+
+<h3 id="setup-billing-profile">Setup billing profile</h3>
+
+<p><a href="https://cloud.google.com/storage/pricing">Google Cloud Storage Pricing</a></p>
+
+<p>Google Cloud Storage isn't free, it's billed based on usage, not a static monthly fee. Storage is very cheap, most users bills will be free or 1-2 cents a month.</p>
+
+<ul>
+  <li>Open <a href="https://console.cloud.google.com/billing">billing</a> and setup profile</li>
+</ul>
+
+<h3 id="create-bucket">Create bucket</h3>
+
+<ul>
+  <li>Open <a href="https://console.cloud.google.com/storage">storage</a></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Create bucket</code></li>
+  <li>If you plan on using a custom domain, you must first verify the domain using this <a href="https://cloud.google.com/storage/docs/domain-name-verification">guide</a>, then name your bucket the domain you're going to use. For example, <code class="language-plaintext highlighter-rouge">https://i.example.com/image.png</code> bucket should be named <code class="language-plaintext highlighter-rouge">i.example.com</code></li>
+  <li>Storage class should be <code class="language-plaintext highlighter-rouge">regional</code> if you plan on using a CDN like <a href="https://www.cloudflare.com/">Cloudflare</a>, or <code class="language-plaintext highlighter-rouge">multi-regional</code> if not.</li>
+  <li>Access control should be <code class="language-plaintext highlighter-rouge">Fine-grained</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Create</code></li>
+</ul>
+
+<h3 id="optional-configure-dns-for-custom-domain">[Optional] Configure DNS for custom domain</h3>
+
+<p>If you are going to use your own domain then you must configure DNS.</p>
+
+<p>For example if you are using <a href="https://www.cloudflare.com/">Cloudflare</a>, your bucket name is <code class="language-plaintext highlighter-rouge">i.example.com</code> then these are DNS settings:</p>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">CNAME</code></li>
+  <li>Name: <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>Value: <code class="language-plaintext highlighter-rouge">c.storage.googleapis.com</code></li>
+</ul>
+
+<h3 id="configure-sharex-google-cloud-storage-settings">Configure ShareX Google Cloud Storage settings</h3>
+
+<ul>
+  <li>Open <code class="language-plaintext highlighter-rouge">Destinations -&gt; Destination settings</code></li>
+  <li>Select <code class="language-plaintext highlighter-rouge">Google Cloud Storage</code> tab</li>
+  <li>Complete authorization</li>
+  <li>Fill bucket name same as which you created</li>
+  <li>For the upload path I suggest using <code class="language-plaintext highlighter-rouge">%y/%mo</code> which creates such folder <code class="language-plaintext highlighter-rouge">2017/12</code></li>
+  <li>If you are using a custom domain fill it in. Google Cloud Storage doesn't support custom domain <code class="language-plaintext highlighter-rouge">https</code> natively, so unless you are using a tls proxy such as <a href="https://www.cloudflare.com/">Cloudflare</a>, you must prepend <code class="language-plaintext highlighter-rouge">http</code> protocol to your domain. So in the custom domain box you would fill in exactly <code class="language-plaintext highlighter-rouge">http://i.example.com</code></li>
+  <li>If you are using uniform permissions in your bucket, make sure to untick <code class="language-plaintext highlighter-rouge">Set public-read ACL on file</code>, since ACL isn't supported in uniform permission buckets.</li>
+  <li>Now you can close destination settings window</li>
+  <li>In main window make sure to select Google Cloud Storage as destination for image uploader, text uploader and file uploader</li>
+</ul>
+
+<p>Now you are ready to use <a href="https://cloud.google.com/storage">Google Cloud Storage</a> in ShareX!</p>
+
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+    var anchorForId = function (id) {
+        var anchor = document.createElement("a");
+        anchor.className = "header-link";
+        anchor.href = "#" + id;
+        anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+        return anchor;
+    };
+
+    var linkifyAnchors = function (level, containingElement) {
+        var headers = containingElement.getElementsByTagName("h" + level);
+        for (var h = 0; h < headers.length; h++) {
+            var header = headers[h];
+            if (typeof header.id !== "undefined" && header.id !== "") {
+                header.appendChild(anchorForId(header.id));
+            }
+        }
+    };
+
+    document.onreadystatechange = function () {
+        if (this.readyState === "complete") {
+            var contentBlock = document.getElementsByClassName("markdown")[0];
+            if (!contentBlock) {
+                return;
+            }
+            for (var level = 1; level <= 6; level++) {
+                linkifyAnchors(level, contentBlock);
+            }
+        }
+    };
+</script>
+
+    <footer>
+    <p>Copyright &copy; 2007-2022 <a href="https://github.com/orgs/ShareX/people">ShareX Team</a> · <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+    $(function() {
+        $("#sharex-twitter").popover("show");
+        $(".dropdown").on("show.bs.dropdown", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+        $(".modal").on("shown.bs.modal", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+    });
+</script>
+
+
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-40712139-3', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+
+
+<!-- Mirrored from getsharex.com/docs/google-cloud-storage by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:26 GMT -->
+</html>

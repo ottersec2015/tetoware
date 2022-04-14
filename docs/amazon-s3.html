@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from getsharex.com/docs/amazon-s3 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="author" content="ShareX Team">
+    <meta name="generator" content="Jekyll v3.9.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Amazon S3 guide - ShareX</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ShareX">
+    <meta name="twitter:title" content="ShareX - The best free and open source screenshot tool for Windows">
+    <meta name="twitter:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="twitter:image" content="../img/ShareX_Card_Large.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ShareX - The best free and open source screenshot tool for Windows" />
+    <meta property="og:url" content="amazon-s3-2.html" />
+    <meta property="og:image" content="../img/ShareX_Card_Large.png" />
+    <meta property="og:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from." />
+
+    <link rel="icon" href="../favicon.ico">
+
+    <meta name="theme-color" content="#174974">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.solid.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.brands.min.css" rel="stylesheet">
+    <link href="../css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../css/main5e2d.css?1648824066" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../downloads/index.html">Downloads</a></li>
+                <li class="nav-item"><a class="nav-link" href="../changelog/index.html">Changelog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../screenshots/index.html">Screenshots</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/ShareX/ShareX">GitHub</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Docs</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://github.com/ShareX/CustomUploaders">Custom uploaders</a>
+                        <a class="dropdown-item" href="../image-effects/index.html">Image effects</a>
+                        <a class="dropdown-item" href="../actions/index.html">Actions</a>
+                        <a class="dropdown-item" href="faq.html">Frequently asked questions</a>
+                        <a class="dropdown-item" href="dev-builds.html">Dev builds</a>
+                        <a class="dropdown-item" href="region-capture.html">Region capture keybinds</a>
+                        <a class="dropdown-item" href="command-line-arguments.html">Command line arguments</a>
+                        <a class="dropdown-item" href="translation.html">Translation</a>
+                        <a class="dropdown-item" href="custom-uploader.html">Custom uploader guide</a>
+                        <a class="dropdown-item" href="amazon-s3.html">Amazon S3 guide</a>
+                        <a class="dropdown-item" href="google-cloud-storage.html">Google Cloud Storage guide</a>
+                        <a class="dropdown-item" href="website-capture.html">Website capture</a>
+                        <a class="dropdown-item" href="../brand-assets/index.html">Brand assets</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a id="sharex-twitter" class="nav-link" href="https://twitter.com/ShareX" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Follow us on Twitter!">Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://discord.gg/ShareX">Discord</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://store.steampowered.com/app/400040/">Steam</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.microsoft.com/store/apps/9nblggh4z1sp">Microsoft Store</a></li>
+                <li class="nav-item"><a class="nav-link" href="../donate/index.html">Donate</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="jumbotron jumbotron-compact">
+    <div class="container">
+        <h1>
+            <a href="../index.html">ShareX</a>
+        </h1>
+        <p>Amazon S3 guide</p>
+    </div>
+</div>
+
+<div>
+    <div class="container markdown">
+        <h2 id="how-to-configure-amazon-s3-and-use-it-in-sharex">How to configure Amazon S3 and use it in ShareX</h2>
+
+<h3 id="get-aws-account">Get AWS account</h3>
+
+<ul>
+  <li>Sign-in or register for an Amazon Web Services account: <a href="https://aws.amazon.com/">aws.amazon.com</a></li>
+</ul>
+
+<h3 id="create-policy">Create policy</h3>
+
+<p>We are going to create this policy to increase our security by giving only PutObject permission which is used when uploading files.</p>
+
+<ul>
+  <li>Open <a href="https://console.aws.amazon.com/iam/home?#/policies">policies page</a></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create policy</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Service</code>, type <code class="language-plaintext highlighter-rouge">S3</code> and then select <code class="language-plaintext highlighter-rouge">S3</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Actions</code>, type <code class="language-plaintext highlighter-rouge">PutObject</code> and then select both <code class="language-plaintext highlighter-rouge">PutObject</code> and <code class="language-plaintext highlighter-rouge">PutObjectAcl</code> to give only put object permission</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Resources</code>, make sure <code class="language-plaintext highlighter-rouge">Specific</code> is selected and then click the <code class="language-plaintext highlighter-rouge">Add ARN</code> link</li>
+  <li>Select <code class="language-plaintext highlighter-rouge">Any</code> to give access to all your buckets</li>
+</ul>
+
+<p><strong>Note:</strong> You can uncheck <code class="language-plaintext highlighter-rouge">Any</code> later if you prefer to use a specific bucket name instead.</p>
+<ul>
+  <li>Select <code class="language-plaintext highlighter-rouge">Any</code> also for object name</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Add</code> in <code class="language-plaintext highlighter-rouge">Add ARN(s)</code> dialog</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Review policy</code></li>
+  <li>Give a name for the policy, for example <code class="language-plaintext highlighter-rouge">ShareX_PutObject</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create policy</code></li>
+</ul>
+
+<h3 id="create-group">Create group</h3>
+
+<ul>
+  <li>Open <a href="https://console.aws.amazon.com/iam/home?#/groups">groups page</a></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create New Group</code></li>
+  <li>Give a name for the group, for example <code class="language-plaintext highlighter-rouge">ShareX</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Next Step</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Policy Type</code> dropdown filter and select <code class="language-plaintext highlighter-rouge">Customer Managed</code></li>
+  <li>Click the checkbox of your recently created policy which should be named <code class="language-plaintext highlighter-rouge">ShareX_PutObject</code> if you used that example name</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Next Step</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create Group</code></li>
+</ul>
+
+<h3 id="create-user">Create user</h3>
+
+<ul>
+  <li>Open <a href="https://console.aws.amazon.com/iam/home?#/users">users page</a></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Add user</code></li>
+  <li>Type the username you want</li>
+  <li>In the access type section, click the check box of <code class="language-plaintext highlighter-rouge">Programmatic access</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Next: Permissions</code></li>
+  <li>Click the checkbox of your recently created group which should be named <code class="language-plaintext highlighter-rouge">ShareX</code> if you used that example name</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Next: Tags</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Next: Review</code></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create user</code></li>
+</ul>
+
+<p><strong>Important:</strong> In this page, either make a record of <code class="language-plaintext highlighter-rouge">Access key ID</code> and <code class="language-plaintext highlighter-rouge">Secret access key</code> somewhere or press <code class="language-plaintext highlighter-rouge">Download .csv</code> to save them as a file. We need these later in ShareX.</p>
+<ul>
+  <li>Press <code class="language-plaintext highlighter-rouge">Close</code></li>
+</ul>
+
+<h3 id="optional-secure-your-account">[Optional] Secure your account</h3>
+
+<p>You don't need to do these but it is suggested to keep your account secure.</p>
+
+<ul>
+  <li>Open <a href="https://console.aws.amazon.com/iam/home">Identity and Access Management page (Dashboard)</a></li>
+  <li>Make sure all security status items are checked as green on this page</li>
+</ul>
+
+<p>You may need to activate multi-factor authentication and create a password policy which should be easy.</p>
+
+<h3 id="create-s3-bucket">Create S3 bucket</h3>
+
+<p>The bucket is where your uploaded files will be stored.</p>
+
+<ul>
+  <li>Open <a href="https://s3.console.aws.amazon.com/s3/home">S3 Management Console</a></li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create bucket</code></li>
+</ul>
+
+<p><strong>Important:</strong> If you are going to use your own domain with S3 then the bucket name should be the same as your CNAME. For example, if you want to use this URL: <code class="language-plaintext highlighter-rouge">https://i.example.com/image.png</code> then bucket name should be <code class="language-plaintext highlighter-rouge">i.example.com</code>. <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingCustomURLs">Click here for more info.</a></p>
+<ul>
+  <li>Type the bucket name you want</li>
+  <li>Select the region you want the bucket to be hosted in</li>
+</ul>
+
+<p><strong>Tip:</strong> You can use this website to check ping of regions: <a href="https://www.cloudping.info/">cloudping.info</a></p>
+<ul>
+  <li>If you want your uploaded files to be accessible by URL then make sure <code class="language-plaintext highlighter-rouge">Block all public access</code> option is unchecked</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">Create bucket</code></li>
+</ul>
+
+<h3 id="optional-configure-dns-for-custom-domain">[Optional] Configure DNS for custom domain</h3>
+
+<p>If you are going to use your own domain then you must configure DNS.</p>
+
+<p>For example, assume that you are using <a href="https://www.cloudflare.com/">Cloudflare</a>, your bucket name is <code class="language-plaintext highlighter-rouge">i.example.com</code> and it is stored in <code class="language-plaintext highlighter-rouge">EU (Frankfurt)</code> region. Your DNS settings will then be:</p>
+
+<ul>
+  <li>Type: <code class="language-plaintext highlighter-rouge">CNAME</code></li>
+  <li>Name: <code class="language-plaintext highlighter-rouge">i</code></li>
+  <li>Target: <code class="language-plaintext highlighter-rouge">i.example.com.s3.eu-central-1.amazonaws.com</code></li>
+</ul>
+
+<p>You can find a list of region endpoints from <code class="language-plaintext highlighter-rouge">ShareX main window -&gt; Destinations -&gt; Destination settings -&gt; Amazon S3 tab -&gt; Endpoints</code>.</p>
+
+<p>So the target should be <code class="language-plaintext highlighter-rouge">{bucketname}.{endpoint}</code></p>
+
+<p><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingCustomURLs">Check here for more information.</a></p>
+
+<h3 id="configure-sharex-amazon-s3-settings">Configure ShareX Amazon S3 settings</h3>
+
+<ul>
+  <li>From ShareX main window, open <code class="language-plaintext highlighter-rouge">Destinations -&gt; Destination settings</code></li>
+  <li>Select <code class="language-plaintext highlighter-rouge">Amazon S3</code> tab</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">access key ID</code> and <code class="language-plaintext highlighter-rouge">secret access key</code> which you noted down previously</li>
+  <li>For the endpoints section select the region that you choose while creating the bucket</li>
+  <li>Fill bucket name same as which you created</li>
+  <li>For the upload path it is recommended to use <code class="language-plaintext highlighter-rouge">%y/%mo</code> which creates sub-folders such as  <code class="language-plaintext highlighter-rouge">2020/04</code></li>
+  <li>If you are using your own domain then check <code class="language-plaintext highlighter-rouge">Use custom domain</code> and fill the text box for example: <code class="language-plaintext highlighter-rouge">https://i.example.com</code></li>
+  <li>You can now close the destination settings window</li>
+  <li>In main window make sure to select Amazon S3 as destination for image uploader, text uploader and file uploader</li>
+</ul>
+
+<p>Now you are ready to use <a href="https://aws.amazon.com/s3/">Amazon S3</a> in ShareX!</p>
+
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+    var anchorForId = function (id) {
+        var anchor = document.createElement("a");
+        anchor.className = "header-link";
+        anchor.href = "#" + id;
+        anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+        return anchor;
+    };
+
+    var linkifyAnchors = function (level, containingElement) {
+        var headers = containingElement.getElementsByTagName("h" + level);
+        for (var h = 0; h < headers.length; h++) {
+            var header = headers[h];
+            if (typeof header.id !== "undefined" && header.id !== "") {
+                header.appendChild(anchorForId(header.id));
+            }
+        }
+    };
+
+    document.onreadystatechange = function () {
+        if (this.readyState === "complete") {
+            var contentBlock = document.getElementsByClassName("markdown")[0];
+            if (!contentBlock) {
+                return;
+            }
+            for (var level = 1; level <= 6; level++) {
+                linkifyAnchors(level, contentBlock);
+            }
+        }
+    };
+</script>
+
+    <footer>
+    <p>Copyright &copy; 2007-2022 <a href="https://github.com/orgs/ShareX/people">ShareX Team</a> · <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+    $(function() {
+        $("#sharex-twitter").popover("show");
+        $(".dropdown").on("show.bs.dropdown", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+        $(".modal").on("shown.bs.modal", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+    });
+</script>
+
+
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-40712139-3', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+
+
+<!-- Mirrored from getsharex.com/docs/amazon-s3 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:25 GMT -->
+</html>
