@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from getsharex.com/docs/region-capture.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="author" content="ShareX Team">
+    <meta name="generator" content="Jekyll v3.9.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Region capture - ShareX</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ShareX">
+    <meta name="twitter:title" content="ShareX - The best free and open source screenshot tool for Windows">
+    <meta name="twitter:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.">
+    <meta name="twitter:image" content="../img/ShareX_Card_Large.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ShareX - The best free and open source screenshot tool for Windows" />
+    <meta property="og:url" content="region-capture-2.html" />
+    <meta property="og:image" content="../img/ShareX_Card_Large.png" />
+    <meta property="og:description" content="ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from." />
+
+    <link rel="icon" href="../favicon.ico">
+
+    <meta name="theme-color" content="#174974">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.solid.min.css" rel="stylesheet">
+    <link href="../css/fontawesome.brands.min.css" rel="stylesheet">
+    <link href="../css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="../css/main5e2d.css?1648824066" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../downloads/index.html">Downloads</a></li>
+                <li class="nav-item"><a class="nav-link" href="../changelog/index.html">Changelog</a></li>
+                <li class="nav-item"><a class="nav-link" href="../screenshots/index.html">Screenshots</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/ShareX/ShareX">GitHub</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Docs</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://github.com/ShareX/CustomUploaders">Custom uploaders</a>
+                        <a class="dropdown-item" href="../image-effects/index.html">Image effects</a>
+                        <a class="dropdown-item" href="../actions/index.html">Actions</a>
+                        <a class="dropdown-item" href="faq.html">Frequently asked questions</a>
+                        <a class="dropdown-item" href="dev-builds.html">Dev builds</a>
+                        <a class="dropdown-item" href="region-capture.html">Region capture keybinds</a>
+                        <a class="dropdown-item" href="command-line-arguments.html">Command line arguments</a>
+                        <a class="dropdown-item" href="translation.html">Translation</a>
+                        <a class="dropdown-item" href="custom-uploader.html">Custom uploader guide</a>
+                        <a class="dropdown-item" href="amazon-s3.html">Amazon S3 guide</a>
+                        <a class="dropdown-item" href="google-cloud-storage.html">Google Cloud Storage guide</a>
+                        <a class="dropdown-item" href="website-capture.html">Website capture</a>
+                        <a class="dropdown-item" href="../brand-assets/index.html">Brand assets</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a id="sharex-twitter" class="nav-link" href="https://twitter.com/ShareX" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="manual" data-content="Follow us on Twitter!">Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://discord.gg/ShareX">Discord</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://store.steampowered.com/app/400040/">Steam</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.microsoft.com/store/apps/9nblggh4z1sp">Microsoft Store</a></li>
+                <li class="nav-item"><a class="nav-link" href="../donate/index.html">Donate</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="jumbotron jumbotron-compact">
+    <div class="container">
+        <h1>
+            <a href="../index.html">ShareX</a>
+        </h1>
+        <p>Region capture</p>
+    </div>
+</div>
+
+<div>
+    <div class="container markdown">
+        <h2 id="keybinds">Keybinds</h2>
+
+<h3 id="general">General</h3>
+
+<ul>
+  <li><kbd>Hold left click</kbd> <kbd>Insert</kbd> Start region selection</li>
+  <li><kbd>Delete</kbd> Delete current shape</li>
+  <li><kbd>Shift + Delete</kbd> Delete all shapes</li>
+  <li><kbd>Ctrl + C</kbd> Copy position and size info</li>
+  <li><kbd>Ctrl + V</kbd> Paste image or text</li>
+  <li><kbd>Ctrl + D</kbd> Duplicate shape</li>
+  <li><kbd>Ctrl + Z</kbd> Undo shape</li>
+  <li><kbd>Arrow keys</kbd> Move cursor / Resize current shape from bottom right corner</li>
+  <li><kbd>Alt + Arrow keys</kbd> Resize current shape from top left corner</li>
+  <li><kbd>Ctrl + Arrow keys</kbd> Move current shape</li>
+  <li><kbd>Shift + Arrow keys</kbd> Resize or move faster</li>
+  <li><kbd>Home</kbd> Move current shape top</li>
+  <li><kbd>End</kbd> Move current shape bottom</li>
+  <li><kbd>Page up</kbd> Move current shape up</li>
+  <li><kbd>Page down</kbd> Move current shape down</li>
+  <li><kbd>Mouse wheel</kbd> Change magnifier size</li>
+  <li><kbd>Hold Ctrl</kbd> Disables shape selection to allow drawing shape top of another shape</li>
+</ul>
+
+<h5 id="while-creating-region">While creating region</h5>
+
+<ul>
+  <li><kbd>Release left click</kbd> <kbd>Insert</kbd> Finish region selection</li>
+  <li><kbd>Right click</kbd> <kbd>Delete</kbd> Cancel region selection</li>
+  <li><kbd>Hold Ctrl</kbd> Move shape</li>
+  <li><kbd>Hold Shift</kbd> Proportional resizing</li>
+  <li><kbd>Hold Alt</kbd> Snap selection to preset sizes</li>
+</ul>
+
+<h5 id="when-cursor-top-of-shape">When cursor top of shape</h5>
+
+<ul>
+  <li><kbd>Left click</kbd> <kbd>Insert</kbd> Select shape</li>
+  <li><kbd>Hold left click</kbd> Move shape</li>
+  <li><kbd>Right click</kbd> <kbd>Delete</kbd> Delete shape</li>
+</ul>
+
+<h3 id="region-capture">Region capture</h3>
+
+<ul>
+  <li><kbd>Esc</kbd> <kbd>Right click</kbd> Close region capture</li>
+  <li><kbd>Tab</kbd> <kbd>Middle click</kbd> Switch between last region and last drawing tool</li>
+  <li><kbd>Space</kbd> Fullscreen capture</li>
+  <li><kbd>1, 2, 3 ... 0</kbd> Specific monitor capture</li>
+  <li><kbd>~</kbd> Active monitor capture</li>
+  <li><kbd>Double left click</kbd> <kbd>Enter</kbd> If multi region mode is enabled then capture regions</li>
+</ul>
+
+<h3 id="image-editor">Image editor</h3>
+
+<ul>
+  <li><kbd>Hold middle click</kbd> Pan image</li>
+  <li><kbd>Enter</kbd> Close image editor and continue task with changes applied</li>
+  <li><kbd>Right click</kbd> <kbd>Space</kbd> Close image editor and continue task without apply changes</li>
+  <li><kbd>Esc</kbd> Close image editor and cancel task</li>
+  <li><kbd>Ctrl + S</kbd> Save image</li>
+  <li><kbd>Ctrl + Shift + S</kbd> Save image as…</li>
+  <li><kbd>Ctrl + Shift + C</kbd> Copy image to clipboard</li>
+  <li><kbd>Ctrl + U</kbd> Upload image</li>
+  <li><kbd>Ctrl + P</kbd> Print image</li>
+</ul>
+
+<h3 id="region-tools">Region tools</h3>
+
+<ul>
+  <li>Rectangle</li>
+  <li>Ellipse</li>
+  <li>Freehand</li>
+</ul>
+
+<h3 id="drawing-tools">Drawing tools</h3>
+
+<ul>
+  <li><kbd>R</kbd> Rectangle</li>
+  <li><kbd>E</kbd> Ellipse</li>
+  <li><kbd>F</kbd> Freehand</li>
+  <li><kbd>L</kbd> Line</li>
+  <li><kbd>A</kbd> Arrow</li>
+  <li><kbd>O</kbd> Text (Outline)</li>
+  <li><kbd>T</kbd> Text (Background)</li>
+  <li><kbd>S</kbd> Speech balloon</li>
+  <li><kbd>I</kbd> Step</li>
+  <li>Image (File)</li>
+  <li>Image (Screen)</li>
+  <li>Sticker</li>
+  <li>Cursor</li>
+  <li><kbd>B</kbd> Blur</li>
+  <li><kbd>P</kbd> Pixelate</li>
+</ul>
+
+<h3 id="other-tools">Other tools</h3>
+
+<ul>
+  <li><kbd>C</kbd> Crop image</li>
+</ul>
+
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+    var anchorForId = function (id) {
+        var anchor = document.createElement("a");
+        anchor.className = "header-link";
+        anchor.href = "#" + id;
+        anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+        return anchor;
+    };
+
+    var linkifyAnchors = function (level, containingElement) {
+        var headers = containingElement.getElementsByTagName("h" + level);
+        for (var h = 0; h < headers.length; h++) {
+            var header = headers[h];
+            if (typeof header.id !== "undefined" && header.id !== "") {
+                header.appendChild(anchorForId(header.id));
+            }
+        }
+    };
+
+    document.onreadystatechange = function () {
+        if (this.readyState === "complete") {
+            var contentBlock = document.getElementsByClassName("markdown")[0];
+            if (!contentBlock) {
+                return;
+            }
+            for (var level = 1; level <= 6; level++) {
+                linkifyAnchors(level, contentBlock);
+            }
+        }
+    };
+</script>
+
+    <footer>
+    <p>Copyright &copy; 2007-2022 <a href="https://github.com/orgs/ShareX/people">ShareX Team</a> · <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+    $(function() {
+        $("#sharex-twitter").popover("show");
+        $(".dropdown").on("show.bs.dropdown", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+        $(".modal").on("shown.bs.modal", function() {
+            $('[data-toggle="popover"]').popover("hide");
+        });
+    });
+</script>
+
+
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-40712139-3', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+
+
+<!-- Mirrored from getsharex.com/docs/region-capture.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Apr 2022 03:10:35 GMT -->
+</html>
